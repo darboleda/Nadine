@@ -1,0 +1,253 @@
+fileFormatVersion: 2
+guid: a825dd57f1d76c54a9fdd893ed994b5b
+timeCreated: 1437373639
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: nadine-left-01
+    21300002: nadine-down-01
+    21300004: nadine-right-01
+    21300006: nadine-up-01
+    21300008: nadine-left-02
+    21300010: nadine-down-02
+    21300012: nadine-right-02
+    21300014: nadine-up-02
+    21300016: nadine-left-A-01
+    21300018: nadine-down-A-01
+    21300020: nadine-right-A-01
+    21300022: nadine-up-A-01
+    21300024: nadine-left-B-01
+    21300026: nadine-down-B-01
+    21300028: nadine-right-B-01
+    21300030: nadine-up-B-01
+    21300032: nadine-one-hand-01
+    21300034: nadine-two-hand-01
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 0
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 16
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: nadine-left-01
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 104
+        width: 18
+        height: 24
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: nadine-down-01
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 104
+        width: 20
+        height: 24
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: nadine-right-01
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 104
+        width: 20
+        height: 24
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: nadine-up-01
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 104
+        width: 20
+        height: 24
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: nadine-left-02
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 78
+        width: 18
+        height: 24
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: nadine-down-02
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 78
+        width: 20
+        height: 24
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: nadine-right-02
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 78
+        width: 19
+        height: 24
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: nadine-up-02
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 78
+        width: 20
+        height: 24
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: nadine-left-A-01
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 52
+        width: 21
+        height: 24
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: nadine-down-A-01
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 52
+        width: 21
+        height: 24
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: nadine-right-A-01
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 52
+        width: 22
+        height: 24
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: nadine-up-A-01
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 52
+        width: 20
+        height: 24
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: nadine-left-B-01
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 26
+        width: 21
+        height: 24
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: nadine-down-B-01
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 26
+        width: 20
+        height: 24
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: nadine-right-B-01
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 26
+        width: 21
+        height: 24
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: nadine-up-B-01
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 26
+        width: 20
+        height: 24
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: nadine-one-hand-01
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 0
+        width: 19
+        height: 24
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: nadine-two-hand-01
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 0
+        width: 17
+        height: 24
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

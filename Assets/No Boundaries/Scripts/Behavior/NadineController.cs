@@ -125,7 +125,7 @@ public class NadineController : MonoBehaviour
         }
 
         SetAnimatorParams(Direction, Speed);
-        Renderer.sortingOrder = 13 * 2 - (int)(transform.position.y + 0.5f) * 2 - 1;
+        //Renderer.sortingOrder = 13 * 2 - (int)(transform.position.y + 0.5f) * 2 - 1;
     }
 
     private float acc;

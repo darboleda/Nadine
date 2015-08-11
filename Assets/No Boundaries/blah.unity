@@ -885,9 +885,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 636c5267000c1b04a90e0c5a60833af9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TranslationSpeed: 10
-  TranslationAcceleration: 20
-  TranslationSlowDistance: 5
+  LerpAmount: .5
   Target: {fileID: 1424931679}
 --- !u!1 &1197312903
 GameObject:

@@ -685,6 +685,7 @@ MonoBehaviour:
   horizontalAxisName: Horizontal
   verticalAxisName: Vertical
   burstActionName: Burst
+  rollActionName: Roll
   deadZone: {x: .100000001, y: .100000001}
 --- !u!114 &11405944
 MonoBehaviour:
@@ -867,8 +868,11 @@ MonoBehaviour:
   VerticalDirectionParamName: Vertical Direction
   MovingParamName: Moving
   DamagedTriggerName: Damage Invincibility
+  RollTriggerName: Roll
   ShieldAttackTriggerName: Burst Attack
   ShieldTypeIdParamName: Shield Type
+  SpecialDirectionParameterName: Special Direction
+  SpecialSpeedParameterName: Special Speed
 --- !u!212 &21246016
 SpriteRenderer:
   m_ObjectHideFlags: 1

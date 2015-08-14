@@ -18,6 +18,9 @@ public class NadineInput : MonoBehaviour
     private string burstActionName;
 
     [SerializeField]
+    private string rollActionName;
+
+    [SerializeField]
     private Vector2 deadZone;
 
     private Player player;
@@ -50,5 +53,10 @@ public class NadineInput : MonoBehaviour
     public bool GetBurstInput()
     {
         return Player.GetButtonDown(burstActionName);
+    }
+
+    public bool GetRollInput()
+    {
+        return Player.GetButtonDown(rollActionName);
     }
 }

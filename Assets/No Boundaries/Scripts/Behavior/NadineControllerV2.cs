@@ -40,14 +40,13 @@ public class NadineControllerV2 : NadineController
 
         angle = angle.SnapToAngle(45);
 
+        Animator.SetSpecialParameters(angle + 180, knockback.Strength);
         Animator.TriggerDamaged();
-        StartCoroutine(SetSpeedOnNextFrame(angle + 180, knockback.Strength));
     }
 
-    private IEnumerator SetSpeedOnNextFrame(float angle, float speed)
+    public void Roll()
     {
-        yield return null;
-        Physics.Speed = 0;
-        Physics.SetVelocity(angle, speed);
+        Animator.SetSpecialParameters(Physics.Direction, 1);
+        Animator.StartRoll();
     }
 }

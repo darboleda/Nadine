@@ -6,6 +6,12 @@ using Rewired;
 public class NadineAcceptActions : StateMachineBehaviour
 {
 
+    public bool AllowDirectionChange = true;
+    public bool ChangeAnimationDirection = true;
+    public bool AllowSpeedChange = true;
+    public bool AllowBurst = true;
+    public bool AllowRoll = true;
+
     private NadineControllerV2 controller;
 
     public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -19,27 +25,43 @@ public class NadineAcceptActions : StateMachineBehaviour
         {
             return;
         }
-        
+
         Vector3 movement = controller.Input.GetMovementAxes();
         float speed = (movement.sqrMagnitude < 0.001f ? 0 :
                        movement.sqrMagnitude > 1 ? 1 :
                        movement.magnitude);
         
-        float direction = controller.Physics.Direction;
+        float physicsDirection = controller.Physics.Direction;
+        float facingAngle = controller.Animator.FacingAngle;
         if (speed > 0)
         {
-            direction = Mathf.Atan2(movement.y, movement.x) * Mathf.Rad2Deg;
+            physicsDirection = Mathf.Atan2(movement.y, movement.x) * Mathf.Rad2Deg;
+            facingAngle = physicsDirection;
         }
+
+        if (AllowSpeedChange)
+        {
+            controller.Physics.Speed = speed;
+            controller.Animator.SetSpeed(speed);
+        }
+
+        if (AllowDirectionChange)
+        {
+            controller.Physics.Direction = physicsDirection;
+            if (ChangeAnimationDirection)
+            {
+                controller.Animator.SetDirection(facingAngle);
+            }
+        }
+
         
-        controller.Physics.Speed = speed;
-        controller.Physics.Direction = direction;
-        
-        if (controller.Input.GetBurstInput())
+        if (AllowBurst && controller.Input.GetBurstInput())
         {
             controller.Animator.StartShieldAttack(0);
         }
-        
-        controller.Animator.SetDirection(direction);
-        controller.Animator.SetSpeed(speed);
+        else if (AllowRoll && controller.Input.GetRollInput())
+        {
+            controller.Roll();
+        }
     }
 }

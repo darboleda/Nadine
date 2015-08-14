@@ -38,13 +38,21 @@ public class NadineAnimator : MonoBehaviour {
 	public string VerticalDirectionParamName;
 	public string MovingParamName;
 	public string DamagedTriggerName;
+    public string RollTriggerName;
 	
 	public string ShieldAttackTriggerName;
 	public string ShieldTypeIdParamName;
+
+    public string SpecialDirectionParameterName;
+    public string SpecialSpeedParameterName;
+
+    public float FacingAngle { get; private set; }
 	
 	public void SetDirection(float degrees)
 	{
-		float radians = Snap.Snap(degrees) * Mathf.Deg2Rad;
+
+        FacingAngle = Snap.Snap(degrees);
+		float radians = FacingAngle * Mathf.Deg2Rad;
 
 		float val = Mathf.Cos(radians);
 		if (Mathf.Abs(val) < 0.01) val = 0;
@@ -69,4 +77,15 @@ public class NadineAnimator : MonoBehaviour {
 		Animator.SetTrigger(ShieldAttackTriggerName);
 		Animator.SetInteger(ShieldTypeIdParamName, shieldId);
 	}
+
+    public void StartRoll()
+    {
+        Animator.SetTrigger(RollTriggerName);
+    }
+
+    public void SetSpecialParameters(float direction, float speed)
+    {
+        Animator.SetFloat(SpecialDirectionParameterName, direction);
+        Animator.SetFloat(SpecialSpeedParameterName, speed);
+    }
 }

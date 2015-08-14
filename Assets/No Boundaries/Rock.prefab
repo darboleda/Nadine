@@ -170,6 +170,15 @@ Prefab:
       propertyPath: Weight
       value: .00999999978
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: HitProperties.Knockback.Strength
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 24385210, guid: 7d352ea260691314289f3e13879fccb6,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 197058}

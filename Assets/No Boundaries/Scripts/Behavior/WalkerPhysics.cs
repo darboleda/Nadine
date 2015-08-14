@@ -35,7 +35,13 @@ public class WalkerPhysics : MonoBehaviour {
 	public float MaxSpeedMultiplier = 5;
 	public float FrictionMultiplier = 50;
 
-	private Vector3 velocity;
+	public Vector3 velocity;
+
+	public void SetVelocity(float angle, float speed)
+	{
+		Direction = angle;
+		velocity = World.Transform(angle, speed * MaxSpeedMultiplier);
+	}
     
     public void FixedUpdate()
     {

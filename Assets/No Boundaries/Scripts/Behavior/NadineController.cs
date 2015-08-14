@@ -16,8 +16,12 @@ public struct NadineAnimatorConfig
 
     public void SetDirection(float radians)
     {
-        Animator.SetFloat(HorizontalDirectionParamName, Mathf.Cos(radians));
-        Animator.SetFloat(VerticalDirectionParamName, Mathf.Sin(radians));
+        float val = Mathf.Cos(radians);
+        if (Mathf.Abs(val) < 0.01) val = 0;
+        Animator.SetFloat(HorizontalDirectionParamName, val);
+        val = Mathf.Sin(radians);
+        if (Mathf.Abs(val) < 0.01) val = 0;
+        Animator.SetFloat(VerticalDirectionParamName, val);
     }
 
     public void SetSpeed(float speed)
@@ -71,6 +75,34 @@ public struct NadineCollisionConfig
     public LayerMask Mask;
 }
 
+[System.Serializable]
+public struct AngleSnapPair
+{
+    public float AngleMax;
+    public float AngleToSnap;
+}
+
+[System.Serializable]
+public struct AngleSnapConfig
+{
+    public AngleSnapPair[] SnapSettings;
+
+    public float Snap(float angle)
+    {
+        if (SnapSettings.Length == 0) return angle;
+
+        while (angle < 0) angle += 360;
+        while (angle >= 360) angle -= 360;
+
+        System.Array.Sort(SnapSettings, (a, b) => a.AngleMax.CompareTo(b.AngleMax));
+        for (int i = 0; i < SnapSettings.Length; i++)
+        {
+            if (angle < SnapSettings[i].AngleMax) return SnapSettings[i].AngleToSnap;
+        }
+        return SnapSettings[SnapSettings.Length - 1].AngleToSnap;
+    }
+}
+
 public class NadineController : MonoBehaviour
 {
     public float Direction;
@@ -80,6 +112,7 @@ public class NadineController : MonoBehaviour
     public NadineMovementConfig Movement;
     public NadineDamagedConfig Damaged;
     public NadineCollisionConfig Collision;
+    public AngleSnapConfig Snap;
     public PlayerHealth Health;
     public SpriteRenderer Renderer;
     public AudioSource Sound;
@@ -221,6 +254,8 @@ public class NadineController : MonoBehaviour
 
     private void SetAnimatorParams(float angle, float speed)
     {
+        angle = Snap.Snap(angle);
+
         Animator.SetDirection(angle * Mathf.Deg2Rad);
         Animator.SetSpeed(speed);
     }

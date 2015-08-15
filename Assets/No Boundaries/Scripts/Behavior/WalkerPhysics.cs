@@ -39,7 +39,6 @@ public class WalkerPhysics : MonoBehaviour {
 
 	public void SetVelocity(float angle, float speed)
 	{
-		Direction = angle;
 		velocity = World.Transform(angle, speed);
 	}
     

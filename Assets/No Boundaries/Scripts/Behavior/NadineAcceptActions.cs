@@ -54,14 +54,16 @@ public class NadineAcceptActions : StateMachineBehaviour
             }
         }
 
-        
+        // TODO implement stamina plan
+        // Only allow set number of rolls and/or bursts in a row.
+        // Use state machine behavior to refill stamina on exit of recovery
         if (AllowBurst && controller.Input.GetBurstInput())
         {
             controller.Animator.StartShieldAttack(0);
         }
         else if (AllowRoll && controller.Input.GetRollInput())
         {
-            controller.Roll();
+            controller.Roll(movement);
         }
     }
 }

@@ -44,9 +44,12 @@ public class NadineControllerV2 : NadineController
         Animator.TriggerDamaged();
     }
 
-    public void Roll()
+    public void Roll(Vector2 movement)
     {
-        Animator.SetSpecialParameters(Physics.Direction, 1);
+        float angle = Animator.FacingAngle + 180;
+        if (movement.sqrMagnitude > 0.01f) angle = Mathf.Atan2(movement.y, movement.x) * Mathf.Rad2Deg;
+
+        Animator.SetSpecialParameters(angle, 1);
         Animator.StartRoll();
     }
 }

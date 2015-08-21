@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Collectible : MonoBehaviour {
-
-    public AudioClip CollectionSound;
+public class Collectible : MonoBehaviour
+{
+    public CollectibleInfo Info;
 
     public void DisableCollisions()
     {

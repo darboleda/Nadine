@@ -3,46 +3,46 @@ using System;
 
 public class PlayerHealth : MonoBehaviour
 {
+    public string DisplayId;
+
     public int MaxHealth;
     public int CurrentHealth;
 
-    public event Action<int, int> HealthChanged;
+    public void OnEnable()
+    {
+        UpdateDisplay();
+    }
 
     public void TakeDamage(int damage)
     {
         CurrentHealth -= damage;
-        NotifyHealthChanged();
+        UpdateDisplay();
     }
 
     public void TakeDamage(int damage, int minHealthLeft)
     {
         CurrentHealth = Mathf.Max(CurrentHealth - damage, minHealthLeft);
-        NotifyHealthChanged();
+        UpdateDisplay();
     }
     
     public void Heal(int amountToHeal)
     {
         CurrentHealth = Mathf.Min(CurrentHealth + amountToHeal, MaxHealth);
-        NotifyHealthChanged();
+        UpdateDisplay();
     }
 
     public void SetMaxHealth(int newValue)
     {
         MaxHealth = newValue;
         CurrentHealth = Mathf.Min(CurrentHealth, MaxHealth);
-        NotifyHealthChanged();
+        UpdateDisplay();
     }
 
-    private void NotifyHealthChanged()
+    private void UpdateDisplay()
     {
-        NotifyHealthChanged(CurrentHealth, MaxHealth);
-    }
-
-    private void NotifyHealthChanged(int current, int max)
-    {
-        if (HealthChanged != null)
+        foreach (CountDisplay display in Hud.FindHud().RequestDisplay<CountDisplay>(DisplayId))
         {
-            HealthChanged(current, max);
+            display.Set(CurrentHealth, MaxHealth);
         }
     }
 }

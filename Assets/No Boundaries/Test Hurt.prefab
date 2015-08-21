@@ -143,7 +143,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HitProperties:
-    Damage: 2
+    Damage: 1
     Origin: {fileID: 421018}
     Knockback:
       Direction: 361

@@ -10,6 +10,8 @@ public class NadineControllerV2 : NadineController
     public NadineInput Input;
     public AudioSource Audio;
     public AudioClip DamagedSound;
+
+    public PlayerStateRelay Relay;
     
     public override void BeginAttack()
     {
@@ -42,6 +44,8 @@ public class NadineControllerV2 : NadineController
 
         Animator.SetSpecialParameters(angle + 180, knockback.Strength);
         Animator.TriggerDamaged();
+
+        Relay.State.Health.TakeDamage(hitProperties.Damage);
     }
 
     public void Roll(Vector2 movement)

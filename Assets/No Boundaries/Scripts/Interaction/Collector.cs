@@ -1,27 +1,45 @@
 ﻿using UnityEngine;
-using System;
+using System.Collections.Generic;
 
-public abstract class Collector<T> : MonoBehaviour where T : Collectible
+public class Collector : MonoBehaviour
 {
+    public StateRelay Relay;
+    public CollectionDisplayer Displayer;
+
+    public List<CollectibleInfo> Collectibles;
 
     public void OnTriggerEnter2D(Collider2D other)
     {
-        DoCollection(other.GetComponent<T>() ?? other.GetComponentInParent<T>());
+        DoCollection(other.GetComponent<Collectible>() ?? other.GetComponentInParent<Collectible>());
     }
 
     public void OnTriggerEnter(Collider other)
     {
-        DoCollection(other.GetComponent<T>() ?? other.GetComponentInParent<T>());
+        DoCollection(other.GetComponent<Collectible>() ?? other.GetComponentInParent<Collectible>());
     }
 
-    private void DoCollection(T collectible)
+    private void DoCollection(Collectible collectible)
     {
         if (collectible == null) return;
-        Collect(collectible);
+        if (ShouldCollect(collectible))
+        {
+            Collect(collectible);
+        }
     }
 
-    protected virtual void Collect(T collectible)
+    private bool ShouldCollect(Collectible collectible)
     {
-        collectible.DestroySelf();
+        foreach (CollectibleInfo info in Collectibles)
+        {
+            if (info.Id == collectible.Info.Id) return true;
+        }
+        return false;
+    }
+
+    protected void Collect(Collectible collectible)
+    {
+        GameObject.Destroy(collectible.gameObject);
+        if (Displayer != null) Displayer.Display(collectible);
+        Relay.UpdateState(collectible.Info.Id);
     }
 }

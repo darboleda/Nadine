@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public abstract class CountDisplay : MonoBehaviour
+public abstract class CountDisplay : Display
 {
     private int max;
     private int current;

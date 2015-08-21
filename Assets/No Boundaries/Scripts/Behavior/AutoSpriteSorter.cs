@@ -43,7 +43,7 @@ public class AutoSpriteSorter : MonoBehaviour
 
     public void SetSortOrder(int sortOrder)
     {
-        SpritesToSort.RemoveAll(x => x == null);
+        if (SpritesToSort != null) SpritesToSort.RemoveAll(x => x == null);
         foreach (AutoSpriteSortOrder sprite in SpritesToSort)
         {
             sprite.SetOrder(sortOrder);

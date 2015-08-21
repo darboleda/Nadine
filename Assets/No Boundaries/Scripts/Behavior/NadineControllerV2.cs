@@ -26,6 +26,7 @@ public class NadineControllerV2 : NadineController
     {
         Knockback knockback = hitProperties.Knockback;
         Audio.PlayOneShot(DamagedSound);
+        Physics.Speed = 0;
 
         float angle;
         if (knockback.IsOriginKnockback)

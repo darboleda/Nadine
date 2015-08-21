@@ -3,12 +3,12 @@ using UnityEngine.UI;
 
 using System.Collections.Generic;
 
-public class HeartDisplay : HealthDisplay
+public class ContainerCount : CountDisplay
 {
     public Sprite[] Sprites;
     public Image[] Images;
 
-    protected override void UpdateHealth(int current, int max)
+    protected override void UpdateDisplay(int current, int max)
     {
         if (Sprites.Length < 1) return;
 

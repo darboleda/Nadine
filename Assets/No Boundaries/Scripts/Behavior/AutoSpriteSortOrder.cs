@@ -3,7 +3,7 @@ using System.Collections;
 
 public class AutoSpriteSortOrder : MonoBehaviour
 {
-    private Renderer renderer;
+    private new Renderer renderer;
     public Renderer Renderer
     {
         get

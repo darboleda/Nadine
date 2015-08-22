@@ -36,4 +36,13 @@ public static class ScriptableObjectUtility
         ScriptableObjectUtility.CreateAsset<CountableInfo>();
     }
 
+    [MenuItem("Assets/Create/Dialogue/Simple Dialogue")]
+    public static void CreateSimpleDialogue() {
+        ScriptableObjectUtility.CreateAsset<SimpleDialogue>();
+    }
+
+    [MenuItem("Assets/Create/Dialogue/Speakers")]
+    public static void CreateDialogueSpeakers() {
+        ScriptableObjectUtility.CreateAsset<DialogueSpeakers>();
+    }
 }

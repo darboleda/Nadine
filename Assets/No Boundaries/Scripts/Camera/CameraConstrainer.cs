@@ -38,4 +38,13 @@ public class CameraConstrainer : MonoBehaviour {
             yield return null;
         }
     }
+
+    public T GetConstraint<T>() where T : CameraConstraint
+    {
+        foreach (CameraConstraint constraint in Constraints)
+        {
+            if (constraint is T) return (T)constraint;
+        }
+        return default(T);
+    }
 }

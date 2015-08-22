@@ -1,12 +1,35 @@
 ﻿using UnityEngine;
-using System.Collections;
+using System.Collections.Generic;
 
 public class CameraController : MonoBehaviour
 {
 
+    private static Dictionary<string, CameraController> activeControllers = new Dictionary<string, CameraController>();
+    public static CameraController GetCamera(string id)
+    {
+        if (activeControllers.ContainsKey(id)) return activeControllers[id];
+        return null;
+    }
+
+    public string CameraId;
+
     public float LerpAmount = 0.5f;
 
     public CameraConstrainer Target;
+
+    public void OnEnable()
+    {
+        activeControllers.Add(CameraId, this);
+    }
+
+    public void OnDisable()
+    {
+        CameraController stored;
+        if (activeControllers.TryGetValue(CameraId, out stored) && stored == this)
+        {
+            activeControllers.Remove(CameraId);
+        }
+    }
 
     public void Start()
     {

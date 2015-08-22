@@ -2376,8 +2376,8 @@ Camera:
   m_GameObject: {fileID: 257416589}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: .192156866, g: .301960796, b: .474509805, a: .0196078438}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: .20588237, g: .20588237, b: .20588237, a: .0196078438}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -2424,6 +2424,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 636c5267000c1b04a90e0c5a60833af9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CameraId: Main
   LerpAmount: .5
   Target: {fileID: 429056351}
 --- !u!1 &258494756
@@ -3146,6 +3147,7 @@ GameObject:
   - 114: {fileID: 429056351}
   - 114: {fileID: 429056350}
   - 114: {fileID: 429056349}
+  - 114: {fileID: 429056353}
   m_Layer: 0
   m_Name: Camera Constrainer
   m_TagString: Untagged
@@ -3192,6 +3194,7 @@ MonoBehaviour:
   Constraints:
   - {fileID: 429056350}
   - {fileID: 429056349}
+  - {fileID: 429056353}
 --- !u!4 &429056352
 Transform:
   m_ObjectHideFlags: 0
@@ -3204,6 +3207,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
+--- !u!114 &429056353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 429056348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72334bbb3d3309748a054d69b34f4ba1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jolt: 20
+  strength: 1000
+  damping: 5
 --- !u!1 &439794761
 GameObject:
   m_ObjectHideFlags: 0
@@ -28202,51 +28219,51 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SortResolution: 16
   SpriteSorters:
-  - {fileID: 2074984585}
-  - {fileID: 520738894}
-  - {fileID: 1313508294}
-  - {fileID: 601389174}
-  - {fileID: 1313918175}
-  - {fileID: 1669329128}
-  - {fileID: 509107213}
-  - {fileID: 832161336}
-  - {fileID: 1264898979}
-  - {fileID: 1058814726}
-  - {fileID: 458207604}
-  - {fileID: 24934688}
-  - {fileID: 2024971165}
-  - {fileID: 120601756}
-  - {fileID: 2032498674}
-  - {fileID: 1059518922}
-  - {fileID: 1737420482}
-  - {fileID: 258494758}
-  - {fileID: 685776270}
-  - {fileID: 308986742}
-  - {fileID: 997810426}
-  - {fileID: 1871545109}
-  - {fileID: 1595288813}
-  - {fileID: 706882998}
-  - {fileID: 1746250457}
-  - {fileID: 1581399098}
   - {fileID: 442526162}
-  - {fileID: 1474489614}
-  - {fileID: 723454307}
-  - {fileID: 1160461407}
-  - {fileID: 735810816}
-  - {fileID: 669790114}
-  - {fileID: 1450199343}
-  - {fileID: 2066304004}
-  - {fileID: 1301968660}
-  - {fileID: 36634211}
-  - {fileID: 519539369}
-  - {fileID: 1775315598}
-  - {fileID: 1317998918}
+  - {fileID: 997810426}
   - {fileID: 1181501482}
-  - {fileID: 919812508}
+  - {fileID: 1595288813}
+  - {fileID: 832161336}
+  - {fileID: 24934688}
+  - {fileID: 36634211}
+  - {fileID: 120601756}
   - {fileID: 203929183}
-  - {fileID: 1722513766}
+  - {fileID: 258494758}
+  - {fileID: 308986742}
+  - {fileID: 458207604}
+  - {fileID: 509107213}
+  - {fileID: 519539369}
+  - {fileID: 520738894}
+  - {fileID: 601389174}
+  - {fileID: 669790114}
+  - {fileID: 685776270}
+  - {fileID: 706882998}
+  - {fileID: 723454307}
+  - {fileID: 735810816}
+  - {fileID: 919812508}
+  - {fileID: 1058814726}
+  - {fileID: 1059518922}
   - {fileID: 1064409778}
+  - {fileID: 1160461407}
+  - {fileID: 1264898979}
+  - {fileID: 1301968660}
+  - {fileID: 1313508294}
+  - {fileID: 1313918175}
+  - {fileID: 1317998918}
+  - {fileID: 1450199343}
+  - {fileID: 1474489614}
+  - {fileID: 1581399098}
+  - {fileID: 1669329128}
+  - {fileID: 1722513766}
+  - {fileID: 1737420482}
+  - {fileID: 1746250457}
+  - {fileID: 1775315598}
   - {fileID: 1821689224}
+  - {fileID: 1871545109}
+  - {fileID: 2024971165}
+  - {fileID: 2032498674}
+  - {fileID: 2066304004}
+  - {fileID: 2074984585}
 --- !u!4 &1842486147
 Transform:
   m_ObjectHideFlags: 0

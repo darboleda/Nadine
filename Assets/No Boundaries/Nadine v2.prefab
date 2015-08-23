@@ -183,8 +183,9 @@ GameObject:
   m_Component:
   - 4: {fileID: 419644}
   - 61: {fileID: 6126498}
-  - 50: {fileID: 5061096}
   - 114: {fileID: 11421598}
+  - 114: {fileID: 11438924}
+  - 50: {fileID: 5076426}
   m_Layer: 8
   m_Name: Collectors
   m_TagString: Untagged
@@ -329,7 +330,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 102880}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.95000005, y: 2.74000001, z: 0}
+  m_LocalPosition: {x: 6.94999981, y: 8.73999977, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 414252}
@@ -409,7 +410,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!50 &5061096
+--- !u!50 &5076426
 Rigidbody2D:
   serializedVersion: 2
   m_ObjectHideFlags: 1
@@ -419,7 +420,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: .0500000007
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_IsKinematic: 1
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -808,6 +809,19 @@ MonoBehaviour:
   - Descriptor: 0
     Tag: Player
   Controller: {fileID: 11445586}
+--- !u!114 &11438924
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 175486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3fb9700a0f070049a0476be7990193b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Tags:
+  - Dialogue Starter
 --- !u!114 &11445586
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1028,7 +1042,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
-  m_SortingOrder: -43
+  m_SortingOrder: -139
   m_Sprite: {fileID: 21300000, guid: 448d007a8f8bf6a439589b4cda053a1a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!212 &21283080
@@ -1054,7 +1068,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
-  m_SortingOrder: -43
+  m_SortingOrder: -139
   m_Sprite: {fileID: 21300000, guid: bbf1d522bd847d649b778d8fda28fcb9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000

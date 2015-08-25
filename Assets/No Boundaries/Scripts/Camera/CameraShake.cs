@@ -32,8 +32,8 @@ public class CameraShake : CameraConstraint {
 
         while (velocity.sqrMagnitude > 0.01f || offset.sqrMagnitude > 0.01f)
         {
-            velocity += (-offset * springStrength - velocity * springDamping) * Time.deltaTime;
-            offset += velocity * Time.deltaTime;
+            velocity += (-offset * springStrength - velocity * springDamping) * DeltaTime;
+            offset += velocity * DeltaTime;
             yield return null;
         }
 

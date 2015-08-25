@@ -32,6 +32,7 @@ GameObject:
   - 50: {fileID: 5041998}
   - 114: {fileID: 11401562}
   - 114: {fileID: 11486268}
+  - 114: {fileID: 11401750}
   m_Layer: 8
   m_Name: Rock
   m_TagString: Untagged
@@ -133,6 +134,21 @@ MonoBehaviour:
   ReflectedDescription:
   - Descriptor: 1
     Tag: Rock
+--- !u!114 &11401750
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 197058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0f1ce4591f6dc34aa669bf32ebc4475, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Clock:
+    Id: Game
+  animators:
+  - {fileID: 9598720}
 --- !u!114 &11419516
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -228,6 +244,10 @@ Prefab:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 0}
+      propertyPath: animators.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
       propertyPath: DamageDescriptors.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -279,6 +299,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: ShouldUpdate
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: Clock.Id
+      value: Game
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

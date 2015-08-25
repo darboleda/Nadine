@@ -82,6 +82,7 @@ GameObject:
   - 114: {fileID: 11491496}
   - 95: {fileID: 9521146}
   - 114: {fileID: 11418160}
+  - 114: {fileID: 11467726}
   m_Layer: 0
   m_Name: Not-Octorock
   m_TagString: Untagged
@@ -195,9 +196,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 1.5}
+  m_Offset: {x: 0, y: .5}
   serializedVersion: 2
-  m_Size: {x: 1, y: 3}
+  m_Size: {x: 1, y: 1}
 --- !u!61 &6186342
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -282,6 +283,21 @@ MonoBehaviour:
   - Descriptor: 0
     Tag: Enemy
   Owner: {fileID: 11491496}
+--- !u!114 &11467726
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 190036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0f1ce4591f6dc34aa669bf32ebc4475, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Clock:
+    Id: Game
+  animators:
+  - {fileID: 9521146}
 --- !u!114 &11470044
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -319,7 +335,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 965e32eef8fc58c4186627d863ec085d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ShouldUpdate: 0
+  ShouldUpdate: 1
   Offset: {x: 0, y: 0, z: 0}
   SpritesToSort:
   - {fileID: 11404472}

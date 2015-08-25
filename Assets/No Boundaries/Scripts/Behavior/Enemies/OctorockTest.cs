@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 
-public class OctorockTest : MonoBehaviour, IEventListener {
+public class OctorockTest : TimedBehavior, IEventListener {
 
 
     [System.Serializable]
@@ -78,8 +78,12 @@ public class OctorockTest : MonoBehaviour, IEventListener {
 
     public void TakeHit(HitBox.Properties hit)
     {
-        StopAllCoroutines();
+        if (Health > 0)
+        {
+            StopAllCoroutines();
+        }
         StartCoroutine(DoHit(hit.Damage));
+        SetClockForDuration("Game", 0.5f, 0.15f);
     }
 
 
@@ -111,7 +115,7 @@ public class OctorockTest : MonoBehaviour, IEventListener {
 
             if (direction != Physics.Direction)
             {
-                yield return new WaitForSeconds(Random.Range(0f, 0.5f));
+                yield return WaitForSeconds(Random.Range(0f, 0.5f));
             }
 
             Physics.Direction = direction;

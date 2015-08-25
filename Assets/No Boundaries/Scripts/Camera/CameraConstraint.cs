@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public abstract class CameraConstraint : MonoBehaviour
+public abstract class CameraConstraint : TimedBehavior
 {
     public struct CameraInformation
     {

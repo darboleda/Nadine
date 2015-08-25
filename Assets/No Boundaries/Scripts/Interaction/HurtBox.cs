@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 
-public abstract class HurtBox : MonoBehaviour
+public abstract class HurtBox : TimedBehavior
 {
     public int Priority;
 

@@ -10,7 +10,7 @@ public struct NadineDamagedConfig
 	public AudioClip DamagedSound;
 }
 
-public abstract class NadineController : MonoBehaviour {
+public abstract class NadineController : TimedBehavior {
 
 
 	public abstract void BeginAttack();

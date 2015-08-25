@@ -61,5 +61,6 @@ public class ShieldHurt : HurtBox
     public override void TakeHit(HitBox hit)
     {
         GetComponent<AudioSource>().PlayOneShot(BlockSound);
+        SetClockForDuration("Game", 0.05f, 0.15f);
     }
 }

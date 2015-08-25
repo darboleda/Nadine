@@ -14,6 +14,7 @@ GameObject:
   - 95: {fileID: 9510076}
   - 114: {fileID: 11494684}
   - 114: {fileID: 11499740}
+  - 114: {fileID: 11470490}
   m_Layer: 0
   m_Name: Nadine v2
   m_TagString: Untagged
@@ -871,6 +872,21 @@ MonoBehaviour:
   Controller: {fileID: 11445586}
   BlockSound: {fileID: 8300000, guid: ccd2bf13029fbf84cbf23bf1ef76b014, type: 3}
   ShieldDirection: 0
+--- !u!114 &11470490
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 102880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0f1ce4591f6dc34aa669bf32ebc4475, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Clock:
+    Id: Player
+  animators:
+  - {fileID: 9510076}
 --- !u!114 &11474636
 MonoBehaviour:
   m_ObjectHideFlags: 1

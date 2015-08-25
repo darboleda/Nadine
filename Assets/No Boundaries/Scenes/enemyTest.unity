@@ -126,10 +126,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 160194, guid: 8b9896e816268d744b7d1e268d6d2150, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8b9896e816268d744b7d1e268d6d2150, type: 2}
   m_IsPrefabParent: 0
@@ -297,6 +293,77 @@ Prefab:
     - {fileID: 11493496, guid: 1d14de2d0e5636442bb387dd17e60253, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 1d14de2d0e5636442bb387dd17e60253, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &423586311
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 423586315}
+  - 114: {fileID: 423586314}
+  - 114: {fileID: 423586313}
+  - 114: {fileID: 423586312}
+  m_Layer: 0
+  m_Name: Clocks
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &423586312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 423586311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11e0b529826695249852c643ec4f7a9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Id: Player
+  Parent:
+    Id: Game
+  Speed: 1
+--- !u!114 &423586313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 423586311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11e0b529826695249852c643ec4f7a9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Id: Game
+  Parent:
+    Id: 
+  Speed: 1
+--- !u!114 &423586314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 423586311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ae720aa3a74b68469790ceeea2519cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &423586315
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 423586311}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 13.8980112, y: 4.02314949, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 21
 --- !u!1001 &481346168
 Prefab:
   m_ObjectHideFlags: 0
@@ -864,23 +931,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SortResolution: 16
   SpriteSorters:
-  - {fileID: 554406282}
-  - {fileID: 1366718664}
-  - {fileID: 2120361276}
-  - {fileID: 1556956478}
-  - {fileID: 1738812810}
-  - {fileID: 1945096044}
   - {fileID: 747386035}
+  - {fileID: 554406282}
+  - {fileID: 481346170}
+  - {fileID: 946253003}
+  - {fileID: 684286144}
+  - {fileID: 992776730}
   - {fileID: 862580844}
   - {fileID: 183268027}
   - {fileID: 1364477157}
-  - {fileID: 946253003}
-  - {fileID: 481346170}
-  - {fileID: 992776730}
-  - {fileID: 2102378711}
-  - {fileID: 684286144}
-  - {fileID: 2018445531}
+  - {fileID: 1366718664}
   - {fileID: 1556162663}
+  - {fileID: 1556956478}
+  - {fileID: 1738812810}
+  - {fileID: 1945096044}
+  - {fileID: 2018445531}
+  - {fileID: 2102378711}
+  - {fileID: 2120361276}
 --- !u!4 &1108373879
 Transform:
   m_ObjectHideFlags: 0
@@ -1069,6 +1136,8 @@ GameObject:
   - 4: {fileID: 1452988037}
   - 114: {fileID: 1452988036}
   - 114: {fileID: 1452988035}
+  - 114: {fileID: 1452988038}
+  - 114: {fileID: 1452988039}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -1100,6 +1169,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Constraints:
   - {fileID: 1452988035}
+  - {fileID: 1452988038}
 --- !u!4 &1452988037
 Transform:
   m_ObjectHideFlags: 0
@@ -1112,6 +1182,34 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 18
+--- !u!114 &1452988038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1452988034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72334bbb3d3309748a054d69b34f4ba1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jolt: 0
+  strength: 0
+  damping: 0
+--- !u!114 &1452988039
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1452988034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0f1ce4591f6dc34aa669bf32ebc4475, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Clock:
+    Id: Game
+  animators: []
 --- !u!114 &1556162663 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 11494684, guid: 8b9896e816268d744b7d1e268d6d2150,
@@ -1238,7 +1336,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 430374, guid: aead61283f508ac4385ef0025de8aa66, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 11491496, guid: aead61283f508ac4385ef0025de8aa66, type: 2}
       propertyPath: Shots.Array.data[0].Speed

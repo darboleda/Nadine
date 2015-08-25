@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class WalkerPhysics : MonoBehaviour {
+public class WalkerPhysics : TimedBehavior {
 
 	[System.Serializable]
 	public struct WorldCoordinates
@@ -72,7 +72,7 @@ public class WalkerPhysics : MonoBehaviour {
 			acceleration = accelerationDirection * AccelerationMultiplier;
 		}
 
-		Vector3 newVelocity = velocity + acceleration * Time.deltaTime;
+		Vector3 newVelocity = velocity + acceleration * DeltaTime;
 		if (Vector3.Dot(newVelocity - targetVelocity, velocity - targetVelocity) < 0)
 		{
 			newVelocity = targetVelocity;
@@ -80,7 +80,7 @@ public class WalkerPhysics : MonoBehaviour {
 		velocity = newVelocity;
 
         
-        Vector3 initialDelta = velocity * Time.deltaTime;
+        Vector3 initialDelta = velocity * DeltaTime;
         bool collided;
         Vector3 correctedDelta = CheckCollision2D(initialDelta, out collided);
 

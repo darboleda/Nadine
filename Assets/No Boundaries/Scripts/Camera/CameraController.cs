@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 
-public class CameraController : MonoBehaviour
+public class CameraController : TimedBehavior
 {
 
     private static Dictionary<string, CameraController> activeControllers = new Dictionary<string, CameraController>();
@@ -45,7 +45,7 @@ public class CameraController : MonoBehaviour
 
         velocity = (target - position).normalized * MaxSpeed;
 
-        Vector3 newPosition = position + (velocity * Time.deltaTime);
+        Vector3 newPosition = position + (velocity * DeltaTime);
         if (Vector3.Dot(target - position, target - newPosition) < 0)
         {
             newPosition = target;

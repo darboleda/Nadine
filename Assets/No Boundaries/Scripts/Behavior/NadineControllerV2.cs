@@ -57,6 +57,8 @@ public class NadineControllerV2 : NadineController
         {
             shake.Jolt(knockback.Strength * new Vector3(Mathf.Cos((angle) * Mathf.Deg2Rad), Mathf.Sin((angle) * Mathf.Deg2Rad), 0) * 150, 800, 30);
         }
+
+        SetClockForDuration("Game", 0.2f, 0.15f * knockback.Strength);
     }
 
     public void Roll(Vector2 movement)

@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 
-public class Bullet : MonoBehaviour
+public class Bullet : TimedBehavior
 {
     public Vector3 Velocity;
 
@@ -29,7 +29,7 @@ public class Bullet : MonoBehaviour
 
     public void FixedUpdate()
     {
-        transform.Translate(Velocity * Time.deltaTime);
+        transform.Translate(Velocity * DeltaTime);
     }
 
     public void OnBecameInvisible()

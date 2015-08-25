@@ -32,5 +32,7 @@ public class ProjectileHurtBox : HurtBox
         Bullet.HitBox.HitProperties.Description = new List<DamageDescriptor>(ReflectedDescription);
         ShieldHit shield = hit as ShieldHit;
         if (shield != null) Bullet.HitBox.HitProperties.Description.AddRange(shield.ReflectedDescriptionAddenda);
+
+        SetClockForDuration("Game", 0.2f, 0.3f);
     }
 }

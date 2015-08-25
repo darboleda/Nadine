@@ -41,14 +41,14 @@ public class EventBasedDialogueController : MonoBehaviour, IEventListener
     {
         return StartCoroutine(WaitForEventHelper(eventName));
     }
-
+    
     private IEnumerator WaitForEventHelper(string eventName)
     {
         do
         {
             yield return null;
         } while (lastEvent != eventName);
-
+        
         lastEvent = null;
     }
 

@@ -15,7 +15,6 @@ public class ShieldHurt : HurtBox
 
     private void SetDirectionTag(float angle)
     {
-        angle = (int)angle + 180;
         angle = angle.SnapToAngle(90);
         while (angle < 0) angle += 360;
         while (angle >= 360) angle -= 360;

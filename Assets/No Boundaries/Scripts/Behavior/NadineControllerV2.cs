@@ -29,24 +29,29 @@ public class NadineControllerV2 : NadineController
         Physics.Speed = 0;
 
         float angle;
-        if (knockback.IsOriginKnockback)
+        if (knockback.Direction.Type == SpecialDirection.DirectionType.Origin)
         {
             Vector3 v = hitProperties.Origin.position - hurtBox.transform.position;
             v.z = 0;
             
             angle = v.GetAngle(Physics.World.East, Physics.World.North);
+            angle += 180;
         }
         else
         {
-            angle = knockback.Direction;
+            angle = knockback.Direction.Direction;
         }
 
         angle = angle.SnapToAngle(45);
 
-        Animator.SetSpecialParameters(angle + 180, knockback.Strength);
+        Animator.SetSpecialParameters(angle, knockback.Strength);
         Animator.TriggerDamaged();
 
-        Relay.State.Health.TakeDamage(hitProperties.Damage);
+        if (Relay.State != null)
+        {
+            Relay.State.Health.TakeDamage(hitProperties.Damage);
+        }
+
         CameraShake shake = CameraController.GetCamera("Main").Target.GetConstraint<CameraShake>();
         if (shake != null)
         {

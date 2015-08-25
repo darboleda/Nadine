@@ -1,5 +1,7 @@
 fileFormatVersion: 2
 guid: 132cc837054d76f488f5cc3d0fccbdee
+labels:
+- Sound
 timeCreated: 1438728346
 licenseType: Free
 AudioImporter:
@@ -13,6 +15,7 @@ AudioImporter:
     conversionMode: 0
   platformSettingOverrides: {}
   forceToMono: 0
+  normalize: 1
   preloadAudioData: 1
   loadInBackground: 0
   3D: 1

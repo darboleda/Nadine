@@ -13,7 +13,7 @@ public class CameraController : MonoBehaviour
 
     public string CameraId;
 
-    public float LerpAmount = 0.5f;
+    public float MaxSpeed = 20f;
 
     public CameraConstrainer Target;
 
@@ -36,40 +36,21 @@ public class CameraController : MonoBehaviour
         Target.Activate(GetComponent<Camera>());
     }
 
-    private float currentSpeed;
-    private bool shouldSlow;
 
+    private Vector3 velocity;
     public void LateUpdate()
     {
-        /*
-        Vector3 target = Target.transform.position;
-        Vector3 deltaLeft = target - transform.position;
-        if (deltaLeft == Vector3.zero)
-        {
-            return;
-        }
-        float magnitude = deltaLeft.magnitude;
-        if (magnitude < 0.01f)
-        {
-            transform.position = target;
-            currentSpeed = 0;
-            shouldSlow = false;
-            return;
-        }
-        Vector3 direction = deltaLeft / magnitude;
-        Debug.Log(magnitude);
-
-        currentSpeed += TranslationAcceleration * Time.deltaTime;
-        currentSpeed = (currentSpeed > TranslationSpeed ? TranslationSpeed : currentSpeed);
-
-        Vector3 delta = direction * Time.deltaTime * currentSpeed;
         Vector3 position = transform.position;
+        Vector3 target = Target.transform.position;
 
-        Vector3 newPosition = position + delta;
-        newPosition = Vector3.Dot(direction, target - newPosition) < 0 ? target : newPosition;
-        this.transform.position = newPosition;
-        */
+        velocity = (target - position).normalized * MaxSpeed;
 
-        transform.position = (Vector3.Lerp(transform.position, Target.transform.position, LerpAmount));
+        Vector3 newPosition = position + (velocity * Time.deltaTime);
+        if (Vector3.Dot(target - position, target - newPosition) < 0)
+        {
+            newPosition = target;
+        }
+
+        transform.position = newPosition;
     }
 }

@@ -81,20 +81,28 @@ public class WalkerPhysics : MonoBehaviour {
 
         
         Vector3 initialDelta = velocity * Time.deltaTime;
-        Vector3 correctedDelta = CheckCollision2D(initialDelta);
+        bool collided;
+        Vector3 correctedDelta = CheckCollision2D(initialDelta, out collided);
+
+        if (collided)
+        {
+            EventRebroadcaster broadcaster = GetComponent<EventRebroadcaster>();
+            if (broadcaster != null) broadcaster.BroadcastEvent("Collided");
+        }
 
         transform.Translate(correctedDelta);
     }
 
-	private Vector3 CheckCollision2D(Vector3 delta)
+	private Vector3 CheckCollision2D(Vector3 delta, out bool collided)
     {
         Vector2 delta2D = delta;
         Vector2 position2D = transform.position + Collision.PositionOffset;
         Vector2 direction = delta2D.normalized;
         float distance = delta2D.magnitude;
 
-        Debug.DrawLine(position2D, position2D + direction * distance * 10, Color.red);
+        collided = false;
 
+        Debug.DrawLine(position2D, position2D + direction * distance * 10, Color.red);
 
         RaycastHit2D hit = Physics2D.CircleCast(position2D, Collision.Radius, direction, distance, Collision.Mask.value);
         if (hit.collider == null) return delta;
@@ -111,12 +119,16 @@ public class WalkerPhysics : MonoBehaviour {
         distance = delta2Dremainder.magnitude;        
         position2D = position2D + delta2D;
 
+        if (distance < 0.01f) collided = true;
+
         Debug.DrawLine(position2D, position2D + direction * distance * 10, Color.cyan);
 
         hit = Physics2D.CircleCast(position2D, Collision.Radius, direction, distance, Collision.Mask.value);
         
         if (hit.collider == null) return new Vector3(delta2D.x + delta2Dremainder.x, delta2D.y + delta2Dremainder.y, delta.z);
         if (Vector2.Dot(direction, hit.normal) >= 0) return new Vector3(delta2D.x + delta2Dremainder.x, delta2D.y +delta2Dremainder.y, delta.z);
+
+        collided = true;
 
         Debug.DrawLine(hit.point, hit.point + hit.normal, Color.magenta);
         delta2Dremainder = (hit.point + hit.normal * Collision.Radius) - position2D;

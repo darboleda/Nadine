@@ -42,7 +42,7 @@ public class RandomTurret : MonoBehaviour
     {
         Bullet bullet = GameObject.Instantiate(BulletPrefab);
         bullet.transform.position = transform.position;
-        bullet.Fire(velocity, "Player");
+        bullet.Fire(velocity);
     }
 
 }

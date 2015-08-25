@@ -21,4 +21,9 @@ public class GameState : MonoBehaviour
 
         return instance;
     }
+
+    public void DestroyState(RequestableState state)
+    {
+        GameObject.Destroy(state.gameObject);
+    }
 }

@@ -1,5 +1,8 @@
 fileFormatVersion: 2
 guid: a5d8554da10f7a547a69643a38bae919
+labels:
+- Music
+- Nadine
 timeCreated: 1438553524
 licenseType: Free
 AudioImporter:
@@ -13,6 +16,7 @@ AudioImporter:
     conversionMode: 0
   platformSettingOverrides: {}
   forceToMono: 0
+  normalize: 1
   preloadAudioData: 1
   loadInBackground: 0
   3D: 1

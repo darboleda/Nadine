@@ -3,14 +3,24 @@ using System.Collections.Generic;
 using System;
 
 [System.Serializable]
+public struct SpecialDirection
+{
+    public enum DirectionType 
+    {
+        Constant,
+        Origin,
+    }
+
+    public DirectionType Type;
+
+    [Range(0, 360)]
+    public float Direction;
+}
+
+[System.Serializable]
 public struct Knockback
 {
-    public bool IsOriginKnockback
-    {
-        get { return (int)Direction == 361; }
-    } 
-    
-    public float Direction;
+    public SpecialDirection Direction;
     public float Strength;
 }
 

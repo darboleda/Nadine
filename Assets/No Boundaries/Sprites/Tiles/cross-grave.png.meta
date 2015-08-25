@@ -1,5 +1,7 @@
 fileFormatVersion: 2
 guid: 068b9f9b24002894ab047c9446515c47
+labels:
+- Tileset
 timeCreated: 1439967758
 licenseType: Free
 TextureImporter:

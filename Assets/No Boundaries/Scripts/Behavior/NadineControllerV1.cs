@@ -175,7 +175,7 @@ public class NadineControllerV1 : NadineController
         Knockback knockback = hitProperties.Knockback;
         float speed = Damaged.KnockbackSpeed * knockback.Strength;
 
-        if (knockback.IsOriginKnockback)
+        if (knockback.Direction.Type == SpecialDirection.DirectionType.Origin)
         {
             Vector3 v = hitProperties.Origin.position - hurtBox.transform.position;
             v.z = 0;

@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Name: Default States
   m_EditorClassIdentifier: 
   SupportedGameStates:
-  - Id: Player
+  - Id: Player0
     State: {fileID: 11479722, guid: d99247e6860e56441a3462c85958c0f8, type: 2}

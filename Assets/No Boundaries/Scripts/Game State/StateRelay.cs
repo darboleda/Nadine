@@ -10,14 +10,7 @@ public abstract class StateRelay : MonoBehaviour {
         {
             get
             {
-                if (internalState == null)
-                {
-                    GameState game = GameState.FindGame();
-                    if (game != null)
-                    {
-                        internalState = game.RequestState<T>(StateId);
-                    }
-                }
+                SetInternalState();
                 return internalState;
             }
         }
@@ -25,6 +18,11 @@ public abstract class StateRelay : MonoBehaviour {
         protected override RequestableState InternalState {get { return State; } }
 
         public abstract string StateId { get; }
+
+        public virtual void Awake()
+        {
+            SetInternalState();
+        }
 
         protected T RequestNewState(string stateId, bool destroyOldState)
         {
@@ -42,6 +40,18 @@ public abstract class StateRelay : MonoBehaviour {
                 internalState = null;
             }
             return internalState;
+        }
+
+        private void SetInternalState()
+        {
+            if (internalState == null)
+            {
+                GameState game = GameState.FindGame();
+                if (game != null)
+                {
+                    internalState = game.RequestState<T>(StateId);
+                }
+            }
         }
     }
 

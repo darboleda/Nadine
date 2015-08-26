@@ -1055,7 +1055,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 588e623ade4047b47b691e965ff3a5f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerIdPrefix: 
+  PlayerIdPrefix: Player
   PlayerId: 0
 --- !u!212 &21246016
 SpriteRenderer:

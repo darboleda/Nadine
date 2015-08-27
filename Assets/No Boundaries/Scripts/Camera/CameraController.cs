@@ -36,7 +36,6 @@ public class CameraController : TimedBehavior
         Target.Activate(GetComponent<Camera>());
     }
 
-
     private Vector3 velocity;
     public void LateUpdate()
     {
@@ -52,5 +51,10 @@ public class CameraController : TimedBehavior
         }
 
         transform.position = newPosition;
+    }
+
+    public void Jump()
+    {
+        transform.position = Target.transform.position;
     }
 }

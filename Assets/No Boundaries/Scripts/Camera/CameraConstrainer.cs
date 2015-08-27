@@ -16,26 +16,38 @@ public class CameraConstrainer : MonoBehaviour {
 
     public void Activate(Camera camera)
     {
-        this.Deactivate();
-        this.StartCoroutine(Constrain(camera));
+        Debug.Log(this);
+        enabled = true;
+
+        CameraController controller = camera.GetComponent<CameraController>();
+
+        if (controller.Target != null && controller.Target != this) controller.Target.Deactivate();
+        controller.Target = this;
+
+        info = new CameraConstraint.CameraInformation(camera);
+        Debug.Log(info);
+        Constrain();
     }
 
     public void Deactivate()
     {
-        this.StopAllCoroutines();
+        enabled = false;
+        info = default(CameraConstraint.CameraInformation);
     }
 
-    public IEnumerator Constrain(Camera camera)
+    private CameraConstraint.CameraInformation info;
+    public void Update()
     {
-        CameraConstraint.CameraInformation info = new CameraConstraint.CameraInformation(camera);
-        while (camera != null)
+        Constrain();
+    }
+
+    public void Constrain()
+    {
+        if (!info.HasCamera) return;
+        foreach (CameraConstraint constraint in Constraints)
         {
-            foreach (CameraConstraint constraint in Constraints)
-            {
-                if (!constraint.enabled) continue;
-                constraint.Constrain(info);
-            }
-            yield return null;
+            if (!constraint.enabled) continue;
+            constraint.Constrain(info);
         }
     }
 

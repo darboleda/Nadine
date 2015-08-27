@@ -45,4 +45,14 @@ public static class ScriptableObjectUtility
     public static void CreateDialogueSpeakers() {
         ScriptableObjectUtility.CreateAsset<DialogueSpeakers>();
     }
+
+    [MenuItem("Assets/Create/Rooms/Room Entry Info")]
+    public static void CreateRoomEntryInfo() {
+        ScriptableObjectUtility.CreateAsset<RoomEntryInfo>();
+    }
+
+    [MenuItem("Assets/Create/Rooms/Defined Rooms")]
+    public static void CreateDefinedRooms() {
+        ScriptableObjectUtility.CreateAsset<DefinedRooms>();
+    }
 }

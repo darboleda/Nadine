@@ -17,6 +17,8 @@ public abstract class CameraConstraint : TimedBehavior
         public bool Orthographic { get { return camera.orthographic; } }
         public float OrthographicSize { get { return camera.orthographicSize; } }
         public float FieldOfView { get { return camera.fieldOfView; } }
+
+        public bool HasCamera { get { return camera != null; } }
     }
 
     public virtual void Start() { }

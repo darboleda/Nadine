@@ -10,7 +10,8 @@ GameObject:
   - 4: {fileID: 494600}
   - 212: {fileID: 21270518}
   - 58: {fileID: 5895910}
-  - 114: {fileID: 11494324}
+  - 114: {fileID: 11493356}
+  - 114: {fileID: 11404556}
   m_Layer: 0
   m_Name: Tree
   m_TagString: Untagged
@@ -25,7 +26,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 199410}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.39206886, y: 6.85449028, z: -4}
+  m_LocalPosition: {x: .5, y: -3.1500001, z: -4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -43,7 +44,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: .5}
   serializedVersion: 2
   m_Radius: .5
---- !u!114 &11494324
+--- !u!114 &11404556
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -51,12 +52,26 @@ MonoBehaviour:
   m_GameObject: {fileID: 199410}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5d6bc58fbf540c4cb0aa21665f0c0f6, type: 3}
+  m_Script: {fileID: 11500000, guid: 39dabc1da52f23940a6525e46dc495fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SorterAxis: 1
-  SorterPositionOffset: {x: 0, y: 0, z: 0}
-  IncludeInactiveRenderer: 1
+  OrderInGroup: 0
+--- !u!114 &11493356
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 199410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 965e32eef8fc58c4186627d863ec085d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShouldUpdate: 0
+  Offset: {x: 0, y: 0, z: 0}
+  SpritesToSort:
+  - {fileID: 11404556}
+  SortResolution: 16
 --- !u!212 &21270518
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -80,7 +95,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -32768
   m_Sprite: {fileID: 21300010, guid: 828f747825a0a54449c6ceed497f5661, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000

@@ -9,3 +9,5 @@ EditorBuildSettings:
     path: Assets/No Boundaries/Scenes/roomLoaderTest.unity
   - enabled: 1
     path: Assets/No Boundaries/Scenes/roomTransitionTest1.unity
+  - enabled: 1
+    path: Assets/No Boundaries/Scenes/roomTransitionTest2.unity

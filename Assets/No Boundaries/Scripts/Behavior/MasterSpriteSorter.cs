@@ -31,6 +31,11 @@ public class MasterSpriteSorter : MonoBehaviour {
         }
     }
 
+    public static void ForceUpdate()
+    {
+        if (activeMaster != null) activeMaster.UpdateSpriteSorters();
+    }
+
     public int SortResolution;
     public List<AutoSpriteSorter> SpriteSorters;
 
@@ -39,7 +44,7 @@ public class MasterSpriteSorter : MonoBehaviour {
         if (!SpriteSorters.Contains(sorter))
         {
             SpriteSorters.Add(sorter);
-            activeMaster.UpdateSpriteSorters();
+            UpdateSpriteSorters();
         }
     }
 

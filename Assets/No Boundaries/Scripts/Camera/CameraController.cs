@@ -33,12 +33,16 @@ public class CameraController : TimedBehavior
 
     public void Start()
     {
+        if (Target == null) return;
+
         Target.Activate(GetComponent<Camera>());
     }
 
     private Vector3 velocity;
     public void LateUpdate()
     {
+        if (Target == null) return;
+
         Vector3 position = transform.position;
         Vector3 target = Target.transform.position;
 
@@ -53,8 +57,10 @@ public class CameraController : TimedBehavior
         transform.position = newPosition;
     }
 
-    public void Jump()
+    public void Jump(float lerpAmount)
     {
-        transform.position = Target.transform.position;
+        if (Target == null) return;
+
+        transform.position = Vector3.Lerp(transform.position, Target.transform.position, lerpAmount);
     }
 }

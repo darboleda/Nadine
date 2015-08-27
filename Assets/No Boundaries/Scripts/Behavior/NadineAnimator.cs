@@ -29,7 +29,7 @@ public struct AngleSnapConfig
     }
 }
 
-public class NadineAnimator : MonoBehaviour {
+public class NadineAnimator : TimedBehavior {
 
 	public Animator Animator;
 	public AngleSnapConfig Snap;
@@ -50,6 +50,7 @@ public class NadineAnimator : MonoBehaviour {
 	
 	public void SetDirection(float degrees)
 	{
+        if (DeltaTime == 0) return;
 
         FacingAngle = Snap.Snap(degrees);
 		float radians = FacingAngle * Mathf.Deg2Rad;
@@ -64,6 +65,8 @@ public class NadineAnimator : MonoBehaviour {
 	
 	public void SetSpeed(float speed)
 	{
+        if (DeltaTime == 0) return;
+
 		Animator.SetBool(MovingParamName, speed > 0);
 	}
 	

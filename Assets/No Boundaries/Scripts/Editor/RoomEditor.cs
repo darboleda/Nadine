@@ -12,8 +12,9 @@ public class RoomEditor : Editor
         Room room = target as Room;
         room.gameObject.tag = "Room";
 
-        if (GUILayout.Button("Update Entrances"))
+        if (GUILayout.Button("Update Entrances and Exits"))
         {
+            room.Exits = room.GetComponentsInChildren<RoomExit>();
             room.Entrances = room.GetComponentsInChildren<RoomEntrance>();
             if (room.EntryInfo != null)
             {

@@ -33,6 +33,6 @@ public class CollisionExitActivator : MonoBehaviour {
     {
         CollisionTags tags;
         if ((tags = other.GetComponentInParent<CollisionTags>()) == null || !tags.Matches(RequiredCollisionTags)) return;
-        GetComponent<RoomExit>().Exit(other.GetComponentInParent<RoomTransitioner>());
+        GetComponent<RoomExit>().Exit();
     }
 }
